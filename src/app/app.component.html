@@ -1,0 +1,26 @@
+<div id="form">
+
+  <h2 id="heading">Todo List</h2>
+  <input class="input" type="text" #box placeholder="Enter new task....">
+  
+  <button  class="submit hover"  (click)="subm(box.value)">Add new task</button>
+</div>
+
+<h2 > Uncompleted task :
+    
+    <div id="uncmp">
+    <ul *ngFor="let item of user" class="listitem">
+      <li #task> <input id="check" (click)="taskcmp(item.name,item.num)" type="checkbox"> {{ item.name }}
+         <button class="hover" (click)="deltask(item.num)"
+        id="del">Delete</button> <button class="hover" id="edit">Edit</button></li>
+    </ul>
+    </div>  </h2>
+    <hr id="line">
+<h2 > Completed task :
+  <div id="cmp">
+<ul *ngFor="let item of user1" class="listitem">
+  <li #task>  {{ item.name }}
+     <button class="hover" (click)="deltask1(item.num)"
+    id="del">Delete</button> 
+</ul></div></h2>
+
